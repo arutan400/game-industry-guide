@@ -1,0 +1,289 @@
+/* 全体の基本スタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+/* ヘッダー */
+.header {
+  background-color: #4caf50;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+.navbar .nav-list {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .nav-list li {
+  margin: 0 15px;
+}
+
+.navbar .nav-list a {
+  color: white;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.navbar .nav-list a:hover {
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+/* ヒーローセクション */
+.hero-section {
+  background-image: url("hero-image.jpg"); /* 背景画像 */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明のオーバーレイ */
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #45a049;
+}
+
+/* コンテンツセクション */
+.content-section {
+  padding: 50px 20px;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.content-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.detail-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.detail-button:hover {
+  background-color: #45a049;
+}
+
+/* お問い合わせセクション */
+.contact-section {
+  padding: 50px 20px;
+  background-color: #f4f4f9;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 10px;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-section button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-section button:hover {
+  background-color: #45a049;
+}
+
+/* フッター */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-nav ul li {
+  margin: 0 10px;
+}
+
+.footer-nav ul li a {
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+  color: #4caf50;
+}
+
+/* メディアクエリ: スマホ対応 */
+@media screen and (max-width: 768px) {
+  /* ナビゲーションメニュー */
+  .navbar .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .nav-list li {
+    margin: 10px 0;
+  }
+
+  /* ヒーローセクション */
+  .hero-section {
+    padding: 50px 20px;
+  }
+
+  .hero-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* コンテンツセクション */
+  .content-section {
+    padding: 30px 20px;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .content-section p {
+    font-size: 0.9rem;
+  }
+
+  /* お問い合わせセクション */
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section label,
+  .contact-section input,
+  .contact-section textarea {
+    font-size: 0.9rem;
+  }
+
+  /* フッター */
+  .footer-nav ul {
+    flex-direction: column;
+  }
+
+  .footer-nav ul li {
+    margin: 5px 0;
+  }
+}
