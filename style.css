@@ -5,24 +5,57 @@ body {
   background-color: #e0f7fa; /* 淡い青色の背景 */
 }
 
+h1 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+}
+
+p {
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
 /* ヘッダーと波のアニメーション */
 .header {
   position: relative;
   text-align: center;
-  background: linear-gradient(
-    60deg,
-    rgba(84, 58, 183, 1) 0%,
-    rgba(0, 172, 193, 1) 100%
-  );
   color: white;
 }
 
 /* タイトルを中央に寄せる */
 .inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 40vh; /* タイトル部分の高さ調整 */
+}
+
+/* 波のアニメーションのスタイル */
+.waves {
+  position: relative;
+  width: 100%;
+  height: 10vh; /* 波の高さを少し低く */
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+}
+
+/* 波のアニメーション */
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
 /* メインセクションのレイアウト */
@@ -41,11 +74,20 @@ main {
   padding: 50px;
   text-align: center;
   background-color: white;
+  margin-bottom: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   height: auto; /* ボックスの高さを自動で調整 */
+}
+
+.content-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* セクションごとの枠線の色 */
@@ -70,53 +112,19 @@ main {
   transform: scale(1.05);
 }
 
-/* 波アニメーションのスタイル */
-.waves {
-  position: relative;
-  width: 100%;
-  height: 10vh; /* 波の高さを少し低く */
-  margin-bottom: -7px;
-  min-height: 100px;
-  max-height: 150px;
-}
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-
-@keyframes move-forever {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
-
 /* レスポンシブデザインの調整 */
 @media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
   .inner-header {
     height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
   }
 
   main {
