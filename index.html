@@ -41,7 +41,10 @@
       <p>
         家庭用ゲーム機、PCゲーム、インディーゲームなど、多様なプラットフォームでゲーム市場が拡大し続けています。特にPCゲームの進化とインディーゲームの人気が高まっています。
       </p>
-      <button onclick="toggleDetails('industry-details')" class="detail-button">
+      <button
+        onclick="toggleDetails('industry-details', this)"
+        class="detail-button"
+      >
         もっと詳しく
       </button>
 
@@ -60,7 +63,7 @@
           一方で、政府もゲームを含むコンテンツ産業の人材育成に注力しており、「新しい資本主義」の改定実行計画の一環として、賃金を含む労働環境の改善や海外展開の支援を進めています。これにより、国内外の競争力が高まり、さらに多くの才能がゲーム業界に集まることが期待されています。
         </p>
         <p>
-          特に人口減少による国内市場の縮小に対しては、辻本氏は悲観的な見方を否定し、ゲーム経験者が増えることで新たな機会が広がるとしています。さらに、人気キャラクターを生かし、海外市場でのファン開拓にも積極的に取り組む必要性が指摘されています。
+          特に人口減少による国内市場の縮小に対しては、CESAやその他の業界リーダーが、新たな機会を提供する必要性を指摘しています。さらに、人気キャラクターを活用し、海外市場でのファン開拓にも積極的に取り組む方針です。
         </p>
       </div>
     </section>
@@ -74,7 +77,10 @@
       <p>
         保護者の皆さまにとっても、これらのスキルはゲーム業界だけでなく、ITやクリエイティブ業界など他の職業でも活かせるものです。ゲーム開発で得た経験は、将来的に多岐にわたるキャリアパスを切り開く力となります。
       </p>
-      <button onclick="toggleDetails('career-details')" class="detail-button">
+      <button
+        onclick="toggleDetails('career-details', this)"
+        class="detail-button"
+      >
         もっと詳しく
       </button>
 
@@ -101,7 +107,10 @@
       <p>
         ゲーム技術はエンターテインメントだけでなく、医療や災害対策など、幅広い分野で活用されています。
       </p>
-      <button onclick="toggleDetails('future-details')" class="detail-button">
+      <button
+        onclick="toggleDetails('future-details', this)"
+        class="detail-button"
+      >
         もっと詳しく
       </button>
 
@@ -131,7 +140,10 @@
       <p>
         ゲーム業界で得られるスキルは他分野でも応用可能で、将来に役立つものです。お子様の将来に安心をもたらします。
       </p>
-      <button onclick="toggleDetails('fears-details')" class="detail-button">
+      <button
+        onclick="toggleDetails('fears-details', this)"
+        class="detail-button"
+      >
         もっと詳しく
       </button>
 
@@ -215,12 +227,14 @@
     </footer>
 
     <script>
-      function toggleDetails(id) {
+      function toggleDetails(id, button) {
         var details = document.getElementById(id);
         if (details.style.display === "none") {
           details.style.display = "block";
+          button.textContent = "たたむ";
         } else {
           details.style.display = "none";
+          button.textContent = "もっと詳しく";
         }
       }
     </script>
