@@ -5,22 +5,26 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #f4f4f9;
-  color: #333;
+  color: #333; /* 全てのテキストを黒に統一 */
 }
 
 h1,
 h2 {
-  color: #333;
+  color: #333; /* 見出しも黒に統一 */
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #333; /* リンクの色も黒に */
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+li {
+  color: #333; /* リストアイテムの文字色も黒に統一 */
 }
 
 button,
@@ -113,29 +117,67 @@ textarea {
   background-color: #45a049;
 }
 
-/* コンテンツセクション */
+/* 各セクションのスタイル変更と背景色の調整 */
 .content-section {
   padding: 50px 20px;
-  background-color: white;
   margin: 20px auto;
   max-width: 900px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: 300px; /* 全てのセクションで同じ高さに調整 */
+}
+
+/* ゲーム業界の現状と将来 */
+#industry-status {
+  background: linear-gradient(
+    135deg,
+    #ffafbd,
+    #ffc3a0
+  ); /* ピンクからライトオレンジのグラデーション */
+}
+
+/* ゲーム業界でのキャリアパスと必要なスキル */
+#career-path {
+  background: linear-gradient(
+    135deg,
+    #ffafbd,
+    #ffc3a0
+  ); /* ピンクからライトオレンジのグラデーション */
+}
+
+/* ゲーム技術は未来を拓くキャリア */
+#future-technology {
+  background: linear-gradient(
+    135deg,
+    #ffafbd,
+    #ffc3a0
+  ); /* ピンクからライトオレンジのグラデーション */
+}
+
+/* ゲーム業界への不安を払拭 */
+#fears {
+  background: linear-gradient(
+    135deg,
+    #ffafbd,
+    #ffc3a0
+  ); /* ピンクからライトオレンジのグラデーション */
 }
 
 .content-section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+  color: #333; /* 見出しのテキスト色も黒に */
 }
 
 .content-section p {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #333; /* 小さい文字の色も黒に */
 }
 
 .detail-button {
-  background-color: #4caf50;
+  background-color: #333;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -144,7 +186,8 @@ textarea {
 }
 
 .detail-button:hover {
-  background-color: #45a049;
+  background-color: #4caf50;
+  color: white;
 }
 
 /* お問い合わせセクション */
@@ -286,4 +329,10 @@ textarea {
   .footer-nav ul li {
     margin: 5px 0;
   }
+}
+
+/* JavaScriptによるボタン文言の切り替え用スタイル */
+.button-toggled {
+  background-color: #f44336;
+  color: white;
 }
